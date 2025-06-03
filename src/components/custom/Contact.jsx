@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const ContactInfoCard = () => {
   return (
-    <div className="relative  rounded-xl p-[2px] overflow-hidden max-w-4xl mx-auto my-10">
+    <div className="relative transform transition-transform duration-300 hover:scale-105  rounded-xl p-[2px] overflow-hidden max-w-4xl mx-auto my-10">
       {/* Animated Border */}
       <div className="absolute inset-0 z-0 rounded-xl blur-sm animate-spin-fast bg-gradient-to-r from-fuchsia-100 via-yellow-200 to-blue-500"></div>
 
