@@ -50,10 +50,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-3">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-green-300">Academic Programmes (PDF)</a></li>
-              <li><a href="#" className="hover:text-green-300">TVETA Corner</a></li>
-              <li><a href="#" className="hover:text-green-300">Staff Information</a></li>
-              <li><a href="#" className="hover:text-green-300">Guidance & Counselling</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Academic Programmes (PDF)</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">TVETA Corner</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Staff Information</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Guidance & Counselling</a></li>
             </ul>
           </div>
 
