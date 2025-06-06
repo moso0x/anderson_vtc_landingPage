@@ -61,17 +61,17 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-3">Resources</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-green-300">Academic Programmes</a></li>
-              <li><a href="#" className="hover:text-green-300">Downloads</a></li>
-              <li><a href="#" className="hover:text-green-300">Institution Journals</a></li>
-              <li><a href="#" className="hover:text-green-300">Notices</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Academic Programmes</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Downloads</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Institution Journals</a></li>
+              <li><a href="#" className="hover:text-[#FED16A]">Notices</a></li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
             <h4 className="font-bold mb-3">Newsletter</h4>
-            <p className="mb-3">Stay updated with the latest Institution news</p>
+            <p className="mb-3 hover:text-[#FED16A]">Stay updated with the latest Institution news</p>
             <div className="flex">
               <input
                 type="email"
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         {/* Footer bottom */}
-        <div className="mt-8 flex  mx-auto justify-center pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-8 flex  mx-auto hover:text-[#FED16A] justify-center pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
           <p>© 2025 Anderson VTC. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             {/* Social icons go here */}

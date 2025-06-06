@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaLaptopCode } from "react-icons/fa";
 
 const cards = [
@@ -14,9 +15,11 @@ const Card = ({ title, content }) => (
   <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 text-black w-96 mx-4 flex-shrink-0 hover:shadow-2xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-white transition-all duration-300">
     <h3 className="text-2xl font-bold mb-3 text-gray-800 tracking-wide">{title}</h3>
     <p className="text-base text-[#00879E] leading-relaxed mb-6">{content}</p>
-    <button className="px-5 py-2 bg-[#F4631E] text-white rounded-full hover:bg-[#00879E] transition-colors duration-300 font-semibold cursor-pointer shadow-md">
-      enroll now!
-    </button>
+    <Link to="/Admissions">
+      <button className="px-5 py-2 bg-[#F4631E] text-white rounded-full hover:bg-[#00879E] transition-colors duration-300 font-semibold cursor-pointer shadow-md">
+        enroll now!
+      </button>
+    </Link>
   </div>
 );
 
@@ -34,25 +37,6 @@ const CardMarquee = () => {
           ))}
         </div>
       </div>
-
-      {/* Marquee animation */}
-      <style>
-        {`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-
-          .animate-marquee {
-            animation: marquee 20s linear infinite;
-            width: max-content;
-          }
-
-          .group:hover .animate-marquee {
-            animation-play-state: paused;
-          }
-        `}
-      </style>
     </div>
   );
 };

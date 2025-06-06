@@ -42,16 +42,17 @@ export default function Navbar() {
             <Link to="/students" className="text-gray-100 hover:text-[#FED16A] transition-colors">
               Students
             </Link>
+			<div className="hidden md:block">
+				<div className="relative group rounded-md p-[2px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 animate-gradient-border hover:animate-pulse">
+					<button className="bg-white text-sm font-bold text-[#3B6790] group-hover:text-green-700 py-2 px-6 rounded-md w-full h-full transition-all duration-300">
+					Student Portal
+					</button>
+				</div>
+				</div>
           </nav>
 
-				{/* Desktop Connect Wallet Button */}
-<div className="hidden md:block">
-  <div className="relative group rounded-md p-[2px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 animate-gradient-border hover:animate-pulse">
-    <button className="bg-white text-sm font-bold text-[#3B6790] group-hover:text-green-700 py-2 px-6 rounded-md w-full h-full transition-all duration-300">
-      Student Portal
-    </button>
-  </div>
-</div>
+				
+				
 
 
 					{/* Mobile Navigation Controls */}
@@ -63,13 +64,11 @@ export default function Navbar() {
 							onClick={toggleMenu}
 							aria-label="Open main menu"
 						>
-							<Menu className="h-6 w-6" />
+							<Menu className="h-8 font-bold w-8 rounded text-white" />
 						</button>
 
-						{/* Mobile Connect Button */}
-						<button className="bg-[#1A5D1A] hover:bg-green-700 text-white py-2 px-4 rounded-4xl">
-							Student Portal
-						</button>
+						
+					
 					</div>
 				</div>
 			</div>

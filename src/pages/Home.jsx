@@ -9,6 +9,7 @@ import courss_duration from '../assets/courss_duration.jpg';
 import CardGrid from '../components/custom/Card';
 import ContactInfoCard from '../components/custom/Contact';
 import CoursesGrid from '../components/custom/CoursesGrid';
+import AnnouncementsList  from '../components/custom/AnnouncementsList';
 
 const slides = [intake2025, applications, fees, courss_duration, institution];
 
@@ -39,7 +40,7 @@ const Home = () => {
         <div className="bg-gray-800 rounded-xl p-4 h-[80vh]">
           <h1 className='text-2xl font-bold text-center mx-auto text-[#309898]'>Empowering You With Hands-On Skills for a Brighter Future</h1>
           <h2 className="text-sm text md:mx-auto flex mx-auto text-center font-bold mb-2">Andersen VTC offers the following career-shaping courses:</h2>
-<ul className='pl-6 list-disc  '>
+            <ul className='pl-6 list-disc  '>
             <li className='hover:text-[#309898] transform transition-transform duration-300 hover:scale-105'>Electrical & Electronics</li>
             <li className='hover:text-[#309898] '>Motor Vehicle Mechanics</li>
             <li className='hover:text-[#309898] '>Agribusiness</li>
@@ -57,6 +58,8 @@ const Home = () => {
       </main>
 
      <CardGrid/>
+     <   AnnouncementsList/>
+  
      <CoursesGrid/>
      <  ContactInfoCard/>
     </div>
