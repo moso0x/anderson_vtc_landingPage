@@ -19,7 +19,7 @@ export default function Navbar() {
 						<Link to="/" className="flex gap-2 items-center">
 					<img className="w-[50px] rounded-full" src={logo} alt="" />
 							<span className="text-xl font-bold">
-								<span className="text-[#ffffff]">Anderson Training Center</span>
+								<span className="text-[#ffffff]">Andersen Training Center</span>
 
 							</span>
 						</Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
               Admissions
             </Link>
             <Link to="/students" className="text-gray-100 hover:text-[#FED16A] transition-colors">
-              Students
+              Clubs & Activities
             </Link>
 			<div className="hidden md:block">
 				<div className="relative group rounded-md p-[2px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 animate-gradient-border hover:animate-pulse">

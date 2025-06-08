@@ -1,4 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+const backgroundImages = [
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80",
+];
 
 const activities = [
   {
@@ -34,17 +40,33 @@ const activities = [
 ];
 
 const ActivityCard = ({ title, description }) => (
-  <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-    <h3 className="text-[#00879E] font-bold text-xl mb-2">{title}</h3>
-    <p className="text-gray-700">{description}</p>
+  <div
+    className="relative bg-white bg-opacity-90 rounded-lg shadow-md p-6 border border-gray-300 cursor-pointer
+    hover:shadow-xl hover:bg-opacity-100 transition-all duration-300 transform hover:scale-[1.05]"
+  >
+    <h3 className="text-[#00879E] font-bold text-xl mb-2 hover:underline">{title}</h3>
+    <p className="text-gray-800">{description}</p>
   </div>
 );
 
 const ActivitiesSection = () => {
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 7000); // change every 7 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="bg-green-50 py-12 px-6">
+    <section
+      className="py-12 px-6 bg-cover bg-center transition-background duration-1000 ease-in-out"
+      style={{ backgroundImage: `url(${backgroundImages[currentBgIndex]})` }}
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-[#00879E] mb-8 text-center">
+        <h2 className="text-3xl font-extrabold text-[#00B8D9] mb-8 text-center">
           Clubs & Activities at Anderson VTC
         </h2>
 
