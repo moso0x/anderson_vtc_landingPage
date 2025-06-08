@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+import students from '../../assets/students.jpg'; 
+import blockss from '../../assets/blockss.jpg';
+import students1 from '../../assets/students1.jpg'; 
+import agroforestry from '../../assets/agroforestry.jpg';  
 const backgroundImages = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80",
+  agroforestry,
+  students,
+  students1,
+  blockss
 ];
 
 const activities = [
@@ -33,9 +38,9 @@ const activities = [
       "Engage in sustainability projects, tree planting, and awareness campaigns to protect our environment.",
   },
   {
-    title: "Music & Choir",
+    title: "Games and sports",
     description:
-      "Develop your musical talents, join the choir, or play instruments in school concerts and events.",
+      "Launching ball games like volleyball and football alongside your other activities makes for an exciting and well-rounded day! Engaging in sports fosters teamwork, discipline, and camaraderie among participants while providing a fun and healthy outlet for energy.",
   },
 ];
 

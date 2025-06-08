@@ -68,4 +68,4 @@ const CardMarquee = () => {
   );
 };
 
-export default Card;
+export default  CardMarquee;

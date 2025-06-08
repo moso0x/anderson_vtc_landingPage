@@ -5,7 +5,6 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 600
     const [curr, setCurr] = useState(0)
 
     const prev = () => setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1))
-
     const next = () => setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1))
 
     useEffect(() => {
@@ -14,12 +13,23 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 600
         return () => clearInterval(slideInterval)
     }, [])
 
-
     return (
         <div className='overflow-hidden relative'>
             <div className='flex transition-transform ease-out duration-500' style={{ transform: `translateX(-${curr * 100}%)` }}>
-                {slides}
+                {slides.map((slide, index) => (
+                    <div key={index} className='relative w-full flex-shrink-0'>
+                        {slide}
+                        {/* Enroll Button Overlay */}
+                        <div className="absolute inset-0 flex items-end justify-center pb-10">
+                            <button className="bg-red-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition">
+                                Enroll with us
+                            </button>
+                        </div>
+                    </div>
+                ))}
             </div>
+
+            {/* Navigation buttons */}
             <div className="absolute inset-0 flex items-center justify-between p-4">
                 <button onClick={prev} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
                     <ChevronLeft />
@@ -28,15 +38,16 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 600
                     <ChevronRight />
                 </button>
             </div>
+
+            {/* Indicator Dots */}
             <div className='absolute bottom-4 right-0 left-0'>
                 <div className='flex items-center justify-center gap-2'>
-                    {slides.map((s, i) => (
-                        <div key={i} className={`transition-all w-1.5 h-1.5 bg-white rounded-full  ${curr === i ? "p-0.5" : "bg-opacity-50"}`} />
+                    {slides.map((_, i) => (
+                        <div key={i} className={`transition-all w-1.5 h-1.5 bg-white rounded-full ${curr === i ? "p-0.5" : "bg-opacity-50"}`} />
                     ))}
                 </div>
             </div>
         </div>
-
     )
 }
 

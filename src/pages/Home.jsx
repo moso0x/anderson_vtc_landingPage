@@ -5,12 +5,9 @@ import Carousel from "../components/custom/Carousel";
 import intake2025 from '../assets/intake2025.jpg';
 import panel from '../assets/fees.jpg';
 import fees from '../assets/panel.jpg';
-
-
 import graduation from '../assets/graduation.jpg';
+import aforestation from '../assets/aforestation2.jpg';
 import cu from '../assets/cu.jpg';
-
-
 import institution from '../assets/institution.jpg';
 import applications from '../assets/applications.jpg';
 import courss_duration from '../assets/courss_duration.jpg';
@@ -20,7 +17,7 @@ import ContactInfoCard from '../components/custom/Contact';
 import CoursesGrid from '../components/custom/CoursesGrid';
 import AnnouncementsList from '../components/custom/AnnouncementsList';
 
-const slides = [intake2025,panel, applications, fees, courss_duration, ];
+const slides = [intake2025, panel,aforestation, cu, applications, fees,graduation, courss_duration];
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
@@ -51,12 +48,18 @@ const Home = () => {
         >
           <Carousel autoSlide={true}>
             {slides.map((s, index) => (
-              <img
-                key={index}
-                src={s}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover rounded-xl"
-              />
+              <div key={index} className="relative w-full h-full">
+                <img
+                  src={s}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+                <div className="absolute inset-0 flex items-end justify-center pb-10">
+                  <button className="bg-red-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition z-10">
+                    Enroll with us
+                  </button>
+                </div>
+              </div>
             ))}
           </Carousel>
         </motion.div>
@@ -101,10 +104,9 @@ const Home = () => {
         </motion.div>
       </main>
 
-      {/* Your original CardGrid */}
+      {/* Cards and other sections */}
       <CardGrid />
 
-      {/* Other sections with scroll animation */}
       <motion.div variants={fadeIn} initial="hidden" whileInView="visible">
         <AnnouncementsList />
       </motion.div>
