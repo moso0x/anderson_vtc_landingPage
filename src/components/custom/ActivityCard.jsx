@@ -38,7 +38,7 @@ const activities = [
       "Engage in sustainability projects, tree planting, and awareness campaigns to protect our environment.",
   },
   {
-    title: "Games and sports",
+    title: "Games and sports   ",
     description:
       "Launching ball games like volleyball and football alongside your other activities makes for an exciting and well-rounded day! Engaging in sports fosters teamwork, discipline, and camaraderie among participants while providing a fun and healthy outlet for energy.",
   },
