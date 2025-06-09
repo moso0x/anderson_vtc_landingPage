@@ -54,11 +54,7 @@ const Home = () => {
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover rounded-xl"
                 />
-                <div className="absolute inset-0 flex items-end justify-center pb-10">
-                  <button className="bg-red-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition z-10">
-                    Enroll with us
-                  </button>
-                </div>
+          
               </div>
             ))}
           </Carousel>

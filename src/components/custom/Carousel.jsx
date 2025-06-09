@@ -1,54 +1,87 @@
-import React, { useState, useEffect } from 'react'
-import { ChevronLeft, ChevronRight } from "react-feather"
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
-const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 6000 }) => {
-    const [curr, setCurr] = useState(0)
+// Example slide captions – you can customize these
+const slideTexts = [
+  "Empowering Your Future",
+  "Learn New Skills Today",
+  "Join a Community of Achievers",
+  "Unlock Your Potential with Us",
+];
 
-    const prev = () => setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1))
-    const next = () => setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1))
+const Carousel = ({ autoSlide = false, autoSlideInterval = 3000, children }) => {
+  const [curr, setCurr] = useState(0);
 
-    useEffect(() => {
-        if (!autoSlide) return
-        const slideInterval = setInterval(next, autoSlideInterval)
-        return () => clearInterval(slideInterval)
-    }, [])
+  const prev = () =>
+    setCurr((curr) =>
+      curr === 0 ? React.Children.count(children) - 1 : curr - 1
+    );
 
-    return (
-        <div className='overflow-hidden relative'>
-            <div className='flex transition-transform ease-out duration-500' style={{ transform: `translateX(-${curr * 100}%)` }}>
-                {slides.map((slide, index) => (
-                    <div key={index} className='relative w-full flex-shrink-0'>
-                        {slide}
-                        {/* Enroll Button Overlay */}
-                        <div className="absolute inset-0 flex items-end justify-center pb-10">
-                            <button className="bg-red-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition">
-                                Enroll with us
-                            </button>
-                        </div>
-                    </div>
-                ))}
+  const next = () =>
+    setCurr((curr) =>
+      curr === React.Children.count(children) - 1 ? 0 : curr + 1
+    );
+
+  useEffect(() => {
+    if (!autoSlide) return;
+    const slideInterval = setInterval(next, autoSlideInterval);
+    return () => clearInterval(slideInterval);
+  }, [curr, autoSlide]);
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-xl">
+      <div
+        className="flex transition-transform ease-out duration-500 h-full"
+        style={{ transform: `translateX(-${curr * 100}%)` }}
+      >
+        {React.Children.map(children, (child, index) => (
+          <div key={index} className="w-full flex-shrink-0 h-full relative">
+            {child}
+
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-10 rounded-xl" />
+
+            {/* Overlay headline text */}
+            <div className="absolute bottom-20 left-6 z-20 text-white text-2xl sm:text-4xl font-bold max-w-lg">
+              {slideTexts[curr % slideTexts.length]}
             </div>
 
-            {/* Navigation buttons */}
-            <div className="absolute inset-0 flex items-center justify-between p-4">
-                <button onClick={prev} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
-                    <ChevronLeft />
-                </button>
-                <button onClick={next} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
-                    <ChevronRight />
-                </button>
+            {/* Enroll button (bottom-right on large screens) */}
+            <div className="hidden lg:flex absolute bottom-6 right-6 z-20">
+              <motion.button
+                className="bg-red-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Enroll with us Today
+              </motion.button>
             </div>
 
-            {/* Indicator Dots */}
-            <div className='absolute bottom-4 right-0 left-0'>
-                <div className='flex items-center justify-center gap-2'>
-                    {slides.map((_, i) => (
-                        <div key={i} className={`transition-all w-1.5 h-1.5 bg-white rounded-full ${curr === i ? "p-0.5" : "bg-opacity-50"}`} />
-                    ))}
-                </div>
+            {/* Enroll button (bottom-center on small screens) */}
+            <div className="absolute inset-0 flex items-end justify-center pb-8 lg:hidden z-20">
+              <motion.button
+                className="md:hidden bg-red-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Enroll with us Today
+              </motion.button>
             </div>
-        </div>
-    )
-}
+          </div>
+        ))}
+      </div>
 
-export default Carousel
+      {/* Navigation buttons */}
+      <div className="absolute inset-0 flex items-center justify-between px-4 z-30">
+        <button onClick={prev} className="text-white text-3xl">
+          ‹
+        </button>
+        <button onClick={next} className="text-white text-3xl">
+          ›
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Carousel;

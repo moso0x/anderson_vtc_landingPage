@@ -42,6 +42,9 @@ export default function Navbar() {
             <Link to="/students" className="text-gray-100 hover:text-[#FED16A] transition-colors">
               Clubs & Activities
             </Link>
+			    <Link to="/staff" className="text-gray-100 hover:text-[#FED16A] transition-colors">
+              Staff
+            </Link>
 			<div className="hidden md:block">
 				<div className="relative group rounded-md p-[2px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 animate-gradient-border hover:animate-pulse">
 					<button className="bg-white text-sm font-bold text-[#3B6790] group-hover:text-green-700 py-2 px-6 rounded-md w-full h-full transition-all duration-300">
@@ -112,6 +115,13 @@ export default function Navbar() {
 						>
 							Students
 						</Link>
+						<div className="hidden md:block">
+				<div className="relative group rounded-md p-[2px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 animate-gradient-border hover:animate-pulse">
+					<button className="bg-white text-sm font-bold text-[#3B6790] group-hover:text-green-700 py-2 px-6 rounded-md w-full h-full transition-all duration-300">
+					Student Portal
+					</button>
+				</div>
+				</div>
 					</div>
 				</div>
 			)}

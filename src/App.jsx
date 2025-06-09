@@ -8,6 +8,7 @@ import About from './pages/About';
 import Admissions from './pages/Admissions';
 import Students from './pages/Students';
 import Programmes from './pages/Programmes';
+import Staff from './pages/Staff';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -35,6 +36,8 @@ function App() {
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/students" element={<Students />} />
         <Route path="/programmes" element={<Programmes />} />
+        <Route path="/staff" element={<Staff />} />
+
       </Routes>
 
       <Footer />

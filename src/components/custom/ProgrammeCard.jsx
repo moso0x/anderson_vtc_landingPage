@@ -7,9 +7,7 @@ const ProgrammeCard = ({ question, answer, requirements }) => {
       <div className="flex items-center justify-between mb-4 transition-transform hover:scale-105">
         <h2 className="text-[#00879E] font-semibold text-xl">{question}</h2>
       </div>
-
       <p className="text-gray-700 mb-4">{answer}</p>
-
       {requirements && requirements.length > 0 && (
         <div className="mb-6">
           <h3 className="text-red-800 font-semibold mb-2">Minimum Requirements:</h3>
@@ -26,9 +24,9 @@ const ProgrammeCard = ({ question, answer, requirements }) => {
         className="block text-center bg-[#FED16A] text-white font-semibold px-5 py-3 rounded-md shadow-md hover:bg-[#00879E]  transition-colors duration-300"
         aria-label={`Enroll for ${question} course`}
       >
-        Enroll for this course
       </Link>
     </div>
+
   );
 };
 

@@ -46,13 +46,15 @@ const activities = [
 
 const ActivityCard = ({ title, description }) => (
   <div
-    className="relative bg-white bg-opacity-90 rounded-lg shadow-md p-6 border border-gray-300 cursor-pointer
-    hover:shadow-xl hover:bg-opacity-100 transition-all duration-300 transform hover:scale-[1.05]"
+    className="relative rounded-2xl shadow-lg p-6 border border-white/20 backdrop-blur-lg text-white
+    hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.05]"
+    style={{ backgroundColor: "rgba(0, 135, 158, 0.3)" }} // #00879E with 30% opacity
   >
-    <h3 className="text-[#00879E] font-bold text-xl mb-2 hover:underline">{title}</h3>
-    <p className="text-gray-800">{description}</p>
+    <h3 className="font-bold text-xl mb-2 hover:underline">{title}</h3>
+    <p className="text-white/90">{description}</p>
   </div>
 );
+
 
 const ActivitiesSection = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);

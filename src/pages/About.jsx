@@ -33,7 +33,7 @@ const messages = [
 
       {/* Flashing Message */}
       <div className="absolute bottom-20 left-0 w-full text-center px-4">
-        <p className="text-white text-lg sm:text-base md:text-lg font-semibold animate-fade-in">
+        <p className="text-white text-3xl sm:text-base md:text-4xl font-semibold animate-fade-in">
           {messages[index]}
         </p>
       </div>
@@ -58,7 +58,7 @@ const messages = [
       </p>
 
       <div className="mt-6">
-        <span className="inline-block bg-[#00879E] text-white text-sm font-medium px-5 py-2 rounded-full shadow hover:bg-[#FED16A] transition">
+        <span className="inline-block bg-[#00879E] text-white text-xl font-medium px-5 py-2 rounded-full shadow hover:bg-[#FED16A] transition">
           Building Skills, Shaping Futures
         </span>
       </div>
