@@ -24,7 +24,7 @@ export default function Footer() {
                   </defs>
                   <text fill="white" fontSize="5">
                     <textPath href="#circlePath" startOffset="0%" className="">
-                      ANDERSON VOCATIONAL CENTER • ANDERSON VOCATIONAL CENTER •
+                      ANDERSEN VOCATIONAL CENTER • ANDERSON VOCATIONAL CENTER •
                     </textPath>
                   </text>
                 </svg>
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Footer bottom */}
         <div className="mt-8 flex  mx-auto hover:text-[#FED16A] justify-center pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
-          <p>© 2025 Anderson VTC. All rights reserved.</p>
+          <p>© 2025 Andersen VTC. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             {/* Social icons go here */}
           </div>

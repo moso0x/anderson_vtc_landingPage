@@ -24,6 +24,7 @@ const ProgrammeCard = ({ question, answer, requirements }) => {
         className="block text-center bg-[#FED16A] text-white font-semibold px-5 py-3 rounded-md shadow-md hover:bg-[#00879E]  transition-colors duration-300"
         aria-label={`Enroll for ${question} course`}
       >
+        Register
       </Link>
     </div>
 

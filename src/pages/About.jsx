@@ -42,11 +42,11 @@ const messages = [
     {/* Text Section */}
     <div className="w-full md:w-1/2 p-6 md:p-10 bg-white">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FED16A] mb-4">
-        About Anderson Vocational Training Centre
+        About Andersen Vocational Training Centre
       </h2>
 
       <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-4">
-        <strong>Anderson Vocational Training Centre (Anderson VTC)</strong> is a premier institution committed to empowering youth and adult learners with hands-on, market-ready skills. We offer practical training in <strong>ICT, Electrical Engineering, Automotive Mechanics, Fashion Design, Carpentry, Welding, Plumbing</strong>, and more.
+        <strong>Andersen Vocational Training Centre (Anderson VTC)</strong> is a premier institution committed to empowering youth and adult learners with hands-on, market-ready skills. We offer practical training in <strong>ICT, Electrical Engineering, Automotive Mechanics, Fashion Design, Carpentry, Welding, Plumbing</strong>, and more.
       </p>
 
       <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-4">

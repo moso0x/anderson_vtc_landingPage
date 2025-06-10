@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const StudentForm = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    secondName: "",
+    otherName: "",
+    gender: "",
+    joiningDate: "",
     email: "",
     course: "",
     comments: "",
@@ -15,106 +20,87 @@ const StudentForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add submit logic here
-  };
 
-  const handleViewFees = () => {
-    window.open("/fee-structure.pdf", "_blank");
-  };
+    const templateParams = {
+      ...formData,
+      fullName: `${formData.firstName} ${formData.secondName} ${formData.otherName}`,
+    };
 
-  const handleJoiningInstructions = () => {
-    window.open("/joining-instructions.pdf", "_blank");
+    emailjs
+      .send(
+        "service_b5pgk8i",
+        "your_template_id",
+        templateParams,
+        "YGyaXSLM1mQdE5Ckxy"
+      )
+      .then(
+        () => alert("Form submitted successfully!"),
+        (error) => alert("Submission failed: " + error.text)
+      );
   };
 
   return (
-    <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl p-6 mt-10">
+    <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl p-6 my-10">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
         Student Enrollment Form
       </h2>
 
-      {/* Buttons to View PDFs */}
+      {/* PDF Links */}
       <div className="flex justify-between mb-4">
         <button
           type="button"
-          onClick={handleViewFees}
+          onClick={() => window.open("/fee-structure.pdf", "_blank")}
           className="text-red-600 font-medium underline hover:text-blue-800 transition"
         >
           View Fee Structure
         </button>
         <button
           type="button"
-          onClick={handleJoiningInstructions}
+          onClick={() => window.open("/joining-instruction.pdf", "_blank")}
           className="text-[#00879E] font-medium underline hover:text-red-800 transition"
         >
           Download Instructions
         </button>
       </div>
 
-      {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Full Name */}
+        {/* Name Fields */}
+        {["firstName", "secondName", "otherName"].map((field) => (
+          <div key={field}>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              {field.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}
+            </label>
+            <input
+              type="text"
+              name={field}
+              value={formData[field]}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        ))}
+
+        {/* Gender */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            First Name
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
           <input
             type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Second Name 
-          </label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
+            name="gender"
+            value={formData.gender}
             onChange={handleChange}
             required
             className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
+        {/* Joining Date */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Other Name
-          </label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Gender
-          </label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium  mb-1">
-            Enter joining Date
-          </label>
+          <label className="block text-sm font-medium mb-1">Joining Date</label>
           <input
             type="date"
-            name="fullName"
-            value={formData.fullName}
+            name="joiningDate"
+            value={formData.joiningDate}
             onChange={handleChange}
             required
             className="w-full border border-gray-300 text-[#FED16A] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -123,9 +109,7 @@ const StudentForm = () => {
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Email Address
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
           <input
             type="email"
             name="email"
@@ -136,11 +120,9 @@ const StudentForm = () => {
           />
         </div>
 
-        {/* Course Selection */}
+        {/* Course */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Select Course
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Select Course</label>
           <select
             name="course"
             value={formData.course}
@@ -148,27 +130,29 @@ const StudentForm = () => {
             required
             className="w-full border border-gray-300 rounded-md p-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="" className="text-[]">-- Choose a course --</option>
-            <option value="">Electrical & Electronics</option>
-            <option value="">Motor Vehicle Mechanics</option>
-            <option value="">Agribusiness</option>
-            <option value="">Metalwork Processing</option>
-              <option value="">Carpentry & Joinery</option>
-            <option value="">Masonry</option>
-            <option value="">Fashion Design & Garment Making</option>
-            <option value="">Hairdressing & Beauty Therapy</option>
-              <option value="">Food & Beverage (Hospitality)</option>
-            <option value="">Information Communication Technology (ICT)</option>
-            <option value="">Plumbing</option>
-            <option value="">Driving</option>
+            <option value="">-- Choose a course --</option>
+            {[
+              "Electrical & Electronics",
+              "Motor Vehicle Mechanics",
+              "Agribusiness",
+              "Metalwork Processing",
+              "Carpentry & Joinery",
+              "Masonry",
+              "Fashion Design & Garment Making",
+              "Hairdressing & Beauty Therapy",
+              "Food & Beverage (Hospitality)",
+              "Information Communication Technology (ICT)",
+              "Plumbing",
+              "Driving",
+            ].map((course) => (
+              <option key={course} value={course}>{course}</option>
+            ))}
           </select>
         </div>
 
         {/* Comments */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Comments
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Comments</label>
           <textarea
             name="comments"
             value={formData.comments}
@@ -178,7 +162,7 @@ const StudentForm = () => {
           />
         </div>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <div className="text-right">
           <button
             type="submit"
