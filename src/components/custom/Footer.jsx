@@ -24,7 +24,7 @@ export default function Footer() {
                   </defs>
                   <text fill="white" fontSize="5">
                     <textPath href="#circlePath" startOffset="0%" className="">
-                      ANDERSEN VOCATIONAL CENTER • ANDERSON VOCATIONAL CENTER •
+                      ANDERSEN VOCATIONAL CENTER • ANDERSEN VOCATIONAL CENTER •
                     </textPath>
                   </text>
                 </svg>
@@ -38,7 +38,7 @@ export default function Footer() {
               />
             </div>
 
-            <h3 className="text-xl font-extrabold mt-4 text-center">Anderson Vocational Center</h3>
+            <h3 className="text-xl font-extrabold mt-4 text-center">Andersen Vocational Center</h3>
             <p className="text-sm text-center mt-2">
               Are you passionate about hands-on skills and ready to shape your future?
               <br />

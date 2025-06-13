@@ -1,4 +1,8 @@
-import React from "react";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+import ParallaxCardWrapper from "../components/custom/ParallaxCardWrapper";
 import ProgrammeCard from "../components/custom/ProgrammeCard";
 
 function Programmes() {
@@ -114,7 +118,8 @@ function Programmes() {
   ];
 
   return (
-    <div>
+    <motion.div>
+      <div>
       <div className="bg-gradient-to-b from-white to-green-100 text-black py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-[#00879E]">
@@ -131,16 +136,24 @@ function Programmes() {
 
       {/* Full width grid, 2 columns on md+ */}
       <div className="pt-14 px-4 grid gap-8 grid-cols-1 md:grid-cols-2 w-full max-w-full mx-auto">
-        {program.map((prog, index) => (
-          <ProgrammeCard
-            key={index}
-            question={prog.question}
-            answer={prog.answer}
-            requirements={prog.requirements}
-          />
-        ))}
+     {program.map((prog, index) => (
+  <ParallaxCardWrapper key={index}>
+    <ProgrammeCard
+      question={prog.question}
+      answer={prog.answer}
+      requirements={prog.requirements}
+    />
+  </ParallaxCardWrapper>
+))}
       </div>
     </div>
+    
+    
+    </motion.div>
+
+
+
+    
   );
 }
 

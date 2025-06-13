@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import CourseDetail from '@/components/custom/CourseDetail';
+
 
 import Navbar from "@/components/custom/Navbar";
 import Footer from "@/components/custom/Footer";
@@ -37,7 +39,7 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/programmes" element={<Programmes />} />
         <Route path="/staff" element={<Staff />} />
-
+        <Route path="/CourseDetails/:courseSlug" element={<CourseDetail />} />
       </Routes>
 
       <Footer />

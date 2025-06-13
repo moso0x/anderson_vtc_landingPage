@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 import Carousel from "../components/custom/Carousel";
 import intake2025 from '../assets/intake2025.jpg';
@@ -16,8 +17,18 @@ import CardGrid from '../components/custom/Card';
 import ContactInfoCard from '../components/custom/Contact';
 import CoursesGrid from '../components/custom/CoursesGrid';
 import AnnouncementsList from '../components/custom/AnnouncementsList';
+import FeePaymentCard from '../components/custom/FeePaymentCard';
 
-const slides = [intake2025, panel,aforestation, cu, applications, fees,graduation, courss_duration];
+const slides = [
+  intake2025,
+  panel,
+  aforestation,
+  cu,
+  applications,
+  fees,
+  graduation,
+  courss_duration
+];
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
@@ -33,6 +44,8 @@ const fadeIn = {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-screen min-h-screen bg-black text-white px-4 py-6 flex flex-col space-y-10">
       
@@ -41,7 +54,7 @@ const Home = () => {
         
         {/* Carousel */}
         <motion.div
-          className="col-span-1 lg:col-span-2 h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden rounded-xl"
+          className="col-span-1 lg:col-span-2 h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] overflow-hidden rounded-xl"
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
@@ -54,13 +67,12 @@ const Home = () => {
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover rounded-xl"
                 />
-          
               </div>
             ))}
           </Carousel>
         </motion.div>
 
-        {/* Course Highlights */}
+        {/* Course Highlights + Button */}
         <motion.div
           className="bg-gray-800 rounded-xl p-6 h-fit"
           variants={fadeIn}
@@ -97,11 +109,20 @@ const Home = () => {
               </li>
             ))}
           </ul>
+
+          {/* Enroll Button */}
+          <button
+            onClick={() => navigate("/Admissions")}
+            className="mt-6 w-full py-3 bg-[#ffffff] text-[#00879E] font-semibold rounded-lg hover:bg-[#f5c652] transition duration-300"
+          >
+           Click to  Enroll 
+          </button>
         </motion.div>
       </main>
 
-      {/* Cards and other sections */}
+      {/* Additional Sections */}
       <CardGrid />
+      <FeePaymentCard />
 
       <motion.div variants={fadeIn} initial="hidden" whileInView="visible">
         <AnnouncementsList />

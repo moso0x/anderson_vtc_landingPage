@@ -40,36 +40,39 @@ const Staff = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[45vh] md:h-[60vh] overflow-hidden rounded-xl shadow-lg bg-black my-10">
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={staffData[index].image}
-          src={staffData[index].image}
-          alt="Staff"
-          initial={{ opacity: 0, scale: 1.02 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 1 }}
-          className="absolute w-full h-full object-contain object-center"
-        />
-      </AnimatePresence>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-
-      {/* Message */}
+    <div className="relative w-full h-auto md:h-[60vh] overflow-hidden rounded-xl shadow-lg bg-black my-10 flex flex-col md:flex-row">
+      {/* Left: Message */}
       <motion.div
         key={staffData[index].message}
-        className="absolute bottom-6 w-full px-4 md:px-6 z-20 text-white"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -30 }}
+        className="w-full md:w-1/2 flex items-center justify-center p-6 z-20 text-white bg-black bg-opacity-70"
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 30 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-base md:text-2xl font-semibold text-left md:text-center">
+        <h2 className="text-lg md:text-2xl font-semibold text-left md:text-center max-w-xl">
           {staffData[index].message}
         </h2>
       </motion.div>
+
+      {/* Right: Image */}
+      <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={staffData[index].image}
+            src={staffData[index].image}
+            alt="Staff"
+            initial={{ opacity: 0, scale: 1.02 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 1 }}
+            className="absolute w-full h-full object-cover object-center"
+          />
+        </AnimatePresence>
+
+        {/* Overlay gradient for legibility on small screens */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10 md:hidden" />
+      </div>
     </div>
   );
 };

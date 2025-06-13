@@ -37,8 +37,8 @@ const CardMarquee = () => {
   };
 
   return (
-    <div className="relative w-screen min-h-screen bg-gray-800 p-6 overflow-hidden">
-      <h2 className="text-3xl font-bold mb-8 text-center text-white tracking-wider">Available Programs</h2>
+    <div className="relative w-screen bg-gray-800 py-10 px-4 overflow-hidden">
+      <h2 className="text-3xl font-bold mb-4 text-center text-white tracking-wider">Available Programs</h2>
 
       {/* Marquee container */}
       <div className="relative w-full overflow-hidden group">
@@ -68,4 +68,4 @@ const CardMarquee = () => {
   );
 };
 
-export default  CardMarquee;
+export default CardMarquee;

@@ -43,15 +43,14 @@ const activities = [
       "Launching ball games like volleyball and football alongside your other activities makes for an exciting and well-rounded day! Engaging in sports fosters teamwork, discipline, and camaraderie among participants while providing a fun and healthy outlet for energy.",
   },
 ];
-
 const ActivityCard = ({ title, description }) => (
   <div
-    className="relative rounded-2xl shadow-lg p-6 border border-white/20 backdrop-blur-lg text-white
+    className="relative rounded-2xl shadow-lg p-6 border border-white/80 text-white
     hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.05]"
-    style={{ backgroundColor: "rgba(0, 135, 158, 0.3)" }} // #00879E with 30% opacity
+    style={{ backgroundColor: "#00809D" }} // Solid dark background
   >
-    <h3 className="font-bold text-xl mb-2 hover:underline">{title}</h3>
-    <p className="text-white/90">{description}</p>
+    <h3 className="font-bold text-xl text-[#FED16A] mb-2 hover:underline">{title}</h3>
+    <p className="text-[#ffffff]">{description}</p>
   </div>
 );
 
