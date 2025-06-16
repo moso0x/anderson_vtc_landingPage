@@ -61,7 +61,7 @@ const Carousel = ({ autoSlide = false, autoSlideInterval = 3000, children }) => 
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                Enroll with us Today
+                Online Application Now Open
               </motion.button>
             </div>
 
@@ -73,7 +73,7 @@ const Carousel = ({ autoSlide = false, autoSlideInterval = 3000, children }) => 
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                Enroll with us Today
+              Online Application Now Open
               </motion.button>
             </div>
           </div>

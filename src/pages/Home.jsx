@@ -14,6 +14,7 @@ import applications from '../assets/applications.jpg';
 import courss_duration from '../assets/courss_duration.jpg';
 
 import CardGrid from '../components/custom/Card';
+import ContactForm from '../components/custom/ContactForm';
 import ContactInfoCard from '../components/custom/Contact';
 import CoursesGrid from '../components/custom/CoursesGrid';
 import AnnouncementsList from '../components/custom/AnnouncementsList';
@@ -132,11 +133,21 @@ const Home = () => {
         <CoursesGrid />
       </motion.div>
 
-      <motion.div variants={fadeIn} initial="hidden" whileInView="visible">
+      {/* <motion.div variants={fadeIn} initial="hidden" whileInView="visible">
         <ContactInfoCard />
-      </motion.div>
+      </motion.div> */}
+         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <ContactForm />
+    </div>
     </div>
   );
 };
 
 export default Home;
+
+
+
+
+
+
+

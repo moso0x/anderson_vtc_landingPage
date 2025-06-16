@@ -25,7 +25,7 @@ export default function Navbar() {
     after:h-[2px] 
     after:bg-[#FED16A] 
     after:transition-all 
-    after:duration-300 
+    after:duration-1000 
     hover:after:w-full
   `;
 
@@ -66,7 +66,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <div className="relative group rounded-md p-[2px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 animate-gradient-border hover:animate-pulse">
                 <button className="bg-white text-sm font-bold text-[#00879E] group-hover:text-green-700 py-2 px-6 rounded-md w-full h-full transition-all duration-300">
-                  Student Portal
+                  Login
                 </button>
               </div>
             </div>

@@ -1,10 +1,9 @@
-// CourseDetail.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import {Link} from "react-router-dom"
 
 const courseDetails = {
-  'electrical-&-electronics': {
+  'electrical-electronics': {
     title: 'Electrical & Electronics',
     description: 'In-depth training in residential, commercial, and industrial electrical systems. This course equips students with both theoretical knowledge and hands-on experience in modern electrical practices.',
     modules: [
@@ -210,6 +209,7 @@ const courseDetails = {
   }
 };
 
+
 const CourseDetail = () => {
   const { courseSlug } = useParams();
   const course = courseDetails[courseSlug];
@@ -219,53 +219,60 @@ const CourseDetail = () => {
   }
 
   return (
-    <div className="p-8 bg-gray-800 text-white min-h-screen">
-      <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-      <p className="mb-6 text-lg">{course.description}</p>
+    <div className="p-8 bg-gray-600 text-white min-h-screen">
+      <h1 className="text-4xl font-bold mb-4 text-yellow-400">{course.title}</h1>
+      <p className="mb-6 text-lg text-gray-300">{course.description}</p>
 
       <div className="grid md:grid-cols-2 gap-8">
+        {/* Left section */}
         <div>
-          <h2 className="text-2xl font-semibold mb-2">Modules Covered</h2>
-          <ul className="list-disc pl-6 space-y-1 mb-6">
+          <h2 className="text-2xl font-semibold mb-2 text-red-400">Modules Covered</h2>
+          <ul className="list-disc pl-6 space-y-2 text-gray-200 mb-6">
             {course.modules.map((m, i) => (
               <li key={i}>{m}</li>
             ))}
           </ul>
 
-          <h2 className="text-2xl font-semibold mb-2">Course Outcomes</h2>
-          <p className="mb-6">{course.outcomes}</p>
+          <h2 className="text-2xl font-semibold mb-2 text-green-400">Course Outcomes</h2>
+          <p className="text-gray-300 mb-6">{course.outcomes}</p>
 
-          <h2 className="text-2xl font-semibold mb-2">Why Enroll with Us?</h2>
-          <p>{course.importance}</p>
+          <h2 className="text-2xl font-semibold mb-2 text-blue-400">Why Enroll with Us?</h2>
+          <p className="text-gray-300">{course.importance}</p>
         </div>
 
-        <div>
-          <div className="bg-gray-700 p-4 rounded-xl shadow-md mb-6">
+        {/* Right section */}
+        <div className="space-y-6">
+          <div className="transition-transform transform hover:scale-105 bg-gray-700 p-4 rounded-xl shadow-lg hover:shadow-red-500/40 duration-300">
             <h2 className="text-xl text-red-500 font-semibold mb-2">Course Requirements</h2>
-            <p>{course.requirements}</p>
+            <p className="text-gray-200">{course.requirements}</p>
           </div>
 
-          <div className="bg-gray-700 p-4 rounded-xl shadow-md mb-6">
-            <h2 className="text-xl font-semibold mb-2">Course Duration</h2>
-            <p>{course.duration}</p>
+          <div className="transition-transform transform hover:scale-105 bg-gray-700 p-4 rounded-xl shadow-lg hover:shadow-yellow-500/30 duration-300">
+            <h2 className="text-xl font-semibold mb-2 text-yellow-400">Course Duration</h2>
+            <p className="text-gray-200">{course.duration}</p>
           </div>
 
-          <div className="bg-gray-700 p-4 rounded-xl shadow-md mb-6">
-            <h2 className="text-xl font-semibold mb-2">Course Fees</h2>
-            <p>{course.fees}</p>
+          <div className="transition-transform transform hover:scale-105 bg-gray-700 p-4 rounded-xl shadow-lg hover:shadow-green-500/30 duration-300">
+            <h2 className="text-xl font-semibold mb-2 text-green-400">Course Fees</h2>
+            <p className="text-gray-200">{course.fees}</p>
           </div>
 
-          <div className="bg-gray-700 p-4 rounded-xl shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Expectations After Completion</h2>
-            <p>{course.expectations}</p>
+          <div className="transition-transform transform hover:scale-105 bg-gray-700 p-4 rounded-xl shadow-lg hover:shadow-blue-500/30 duration-300">
+            <h2 className="text-xl font-semibold mb-2 text-blue-400">Expectations After Completion</h2>
+            <p className="text-gray-200">{course.expectations}</p>
           </div>
         </div>
-       
       </div>
-    To enroll to this Course <br />
-       <button className='bg-red-600 text-lg font-medium px-4 py-2 rounded-full'>
-        <Link to="../../Pages/Programmes">Navigate to Programmes</Link>
+
+      {/* CTA Section */}
+      <div className="mt-10">
+        <p className="mb-4 text-lg font-medium">To enroll in this course:</p>
+        <button className="bg-red-600 hover:bg-red-700 transition-transform transform hover:scale-105 text-lg font-semibold px-6 py-3 rounded-full shadow-lg">
+          <Link to="/Pages/Programmes" className="text-white">
+         Apply Now
+          </Link>
         </button>
+      </div>
     </div>
   );
 };
