@@ -120,7 +120,7 @@ const ActivitiesSection = () => {
           Explore Student Life @ Anderson VTC
         </h2>
 
-        <p className="text-center italic text-white/80 mb-10 transition-opacity duration-700">
+        <p className="text-center italic text-2xl text-white/80 mb-10 transition-opacity duration-700">
           {quotes[currentQuote]}
         </p>
 
