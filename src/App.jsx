@@ -25,12 +25,18 @@ function App() {
   return (
     <>
       <Navbar />
+{loading && (
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-white backdrop-blur-md">
+    <div className="slick-spinner"></div>
+    <p className="mt-4 text-gray-600 font-medium animate-pulse">Loading, please wait...</p>
+  </div>
+)}
 
-      {loading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-          <div className="loader" />
-        </div>
-      )}
+     {loading && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+    <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+)}
 
       <Routes>
         <Route path="/" element={<Home />} />
