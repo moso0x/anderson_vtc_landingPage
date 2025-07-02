@@ -29,7 +29,7 @@ const ContactForm = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
         {/* Form */}
         <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-          <h2 className="text-3xl font-bold text-blue-600 mb-6">Get In Touch</h2>
+          <h2 className="text-3xl font-bold text-cyan-600 mb-6">Get In Touch</h2>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -61,7 +61,7 @@ const ContactForm = () => {
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Phone Number <span className="text-xs text-gray-500">(Kenya +254)</span>
+                Phone Number <span className="text-xs text-cyan-500">(Kenya +254)</span>
               </label>
               <input
                 type="tel"
@@ -74,7 +74,7 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
+              <label className="block text-sm font-semibold text-red-700 mb-1">
                 Message
               </label>
               <textarea
@@ -91,7 +91,7 @@ const ContactForm = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition"
+              className="w-full bg-cyan-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-cyan-600 transition"
             >
               Contact Us
             </motion.button>
@@ -109,20 +109,20 @@ const ContactForm = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="bg-gray-100 p-8 rounded-xl shadow-md">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
-          <div className="space-y-6 text-gray-700 text-base">
+        <div className="bg-gray-800 p-8 rounded-xl shadow-md">
+          <h3 className="text-4xl font-semibold text-gray-100 mb-6">Contact Information</h3>
+          <div className="space-y-6 text-gray-100 text-base">
             <div className="flex items-center gap-3">
-              <MdLocationOn className="text-blue-600 text-2xl" />
-                 <span>Location:Chepchoina Trans-Nzoia County </span> <br />
+              <MdLocationOn className="text-cyan-600 text-3xl flex-col" />
+                 <span className="text-xl">Location:Chepchoina Trans-Nzoia County </span> <br />
               <span>Kitale-Suam Rd </span>
             </div>
             <div className="flex items-center gap-3">
-              <MdPhone className="text-blue-600 text-2xl" />
-              <span>+254 0724 014 770</span>
+              <MdPhone className="text-cyan-600 text-2xl" />
+              <span className="text-gray-200">+254 0724 014 770</span>
             </div>
             <div className="flex items-center gap-3">
-              <MdEmail className="text-blue-600 text-2xl" />
+              <MdEmail className="text-cyan-600 text-2xl" />
               <span>Andersenvocationaltc@gmail.com</span>
             </div>
           </div>

@@ -32,7 +32,7 @@ const AnnouncementsList = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       <h2 className="text-4xl font-extrabold text-center mb-10 text-red-500">
-        Latest Announcements & Events
+         Announcements & Events Section
       </h2>
 
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

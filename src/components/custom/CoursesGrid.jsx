@@ -33,7 +33,7 @@ const courses = [
 
 const CoursesGrid = () => {
   return (
-    <div className="p-6 bg-gray-700 min-h-screen">
+    <div className="p-6 bg-[#222224] min-h-screen">
       <h2 className="text-4xl font-bold text-center mb-8">Our Courses and Teaching Areas</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course, index) => (

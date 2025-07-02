@@ -120,7 +120,7 @@ function Programmes() {
   return (
     <motion.div>
       <div>
-      <div className="bg-gradient-to-b from-white to-green-100 text-black py-10">
+      <div className="bg-gray-200 py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-[#00879E]">
             Empowering You with Hands-On Skills for a Brighter Future

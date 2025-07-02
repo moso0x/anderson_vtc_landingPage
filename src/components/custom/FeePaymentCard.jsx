@@ -1,4 +1,5 @@
 import React from "react";
+import { FcLibrary } from "react-icons/fc";
 
 const paymentDetails = [
   {
@@ -7,6 +8,8 @@ const paymentDetails = [
       <>
        
         <br />
+   
+        <FcLibrary className="text-[80px] mx-auto"/>
         <strong>Account Number:</strong> <span className="text-[#00B8D9] font-bold text-2xl ">770-050-1777</span> <br />
          <span className="text-[#FED16A] uppercase font-bold">National Bank, Kitale</span>
         <span className="block mt-2">
@@ -66,7 +69,7 @@ const FeePaymentCard = () => (
       {paymentDetails.map((detail, index) => (
         <div
           key={index}
-          className="bg-white/10 text-white border border-white/20 backdrop-blur-md p-6 rounded-2xl shadow-md"
+          className=" transition-transform hover:scale-105 bg-white/10 text-white border border-white/20 backdrop-blur-md p-6 rounded-2xl shadow-md"
         >
           <h3 className="text-xl font-semibold mb-2 text-[#00B8D9]">{detail.title}</h3>
           <div className="text-white/90">{detail.info}</div>

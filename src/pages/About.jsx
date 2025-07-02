@@ -19,7 +19,7 @@ const messages = [
   }, []);
 
   return (
-    <div className="relative max-w-6xl mx-auto m-10 rounded-2xl overflow-hidden shadow-xl">
+    <div className=" bg-gray-500 relative max-w-6xl mx-auto m-10 rounded-2xl overflow-hidden shadow-xl">
   <div className="flex flex-col md:flex-row relative">
     {/* Image with Overlay and Flash Text */}
     <div className="relative w-full md:w-1/2 h-[250px] md:h-auto min-h-[250px]">
@@ -58,7 +58,7 @@ const messages = [
       </p>
 
       <div className="mt-6">
-        <span className="inline-block bg-[#00879E] text-white text-xl font-medium px-5 py-2 rounded-full shadow hover:bg-[#FED16A] transition">
+        <span className="inline-block  text-gray-600 text-xl font-medium px-5 py-2 rounded-full shadow hover:bg-[#FED16A] transition">
           Building Skills, Shaping Futures
         </span>
       </div>

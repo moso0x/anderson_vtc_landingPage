@@ -12,6 +12,7 @@ import cu from '../assets/cu.jpg';
 import institution from '../assets/institution.jpg';
 import applications from '../assets/applications.jpg';
 import courss_duration from '../assets/courss_duration.jpg';
+import { FcNext } from "react-icons/fc";
 
 import CardGrid from '../components/custom/Card';
 import ContactForm from '../components/custom/ContactForm';
@@ -19,6 +20,8 @@ import ContactInfoCard from '../components/custom/Contact';
 import CoursesGrid from '../components/custom/CoursesGrid';
 import AnnouncementsList from '../components/custom/AnnouncementsList';
 import FeePaymentCard from '../components/custom/FeePaymentCard';
+import PrincipalMessage from '../components/custom/PrincipalMessage';
+
 
 const slides = [
   intake2025,
@@ -60,6 +63,7 @@ const Home = () => {
           initial="hidden"
           whileInView="visible"
         >
+   
           <Carousel autoSlide={true}>
             {slides.map((s, index) => (
               <div key={index} className="relative w-full h-full">
@@ -75,16 +79,16 @@ const Home = () => {
 
         {/* Course Highlights + Button */}
         <motion.div
-          className="bg-gray-800 rounded-xl p-6 h-fit"
+          className="bg-[#2a2a2a] rounded-xl p-6 h-fit"
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-center text-[#309898] mb-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-center text-gray-200 mb-4 hover:text-[#FED16A]">
             Empowering You With Hands-On Skills for a Brighter Future
           </h1>
-          <h2 className="text-sm text-center font-semibold mb-4">
+          <h2 className="text text-[#FED16A] font-bold text-center font-semibold mb-4 transform transition duration-300 hover:scale-[1.05]">
             Andersen VTC offers the following career-shaping courses:
           </h2>
           <ul className="pl-6 list-disc space-y-1 text-sm sm:text-base">
@@ -104,7 +108,7 @@ const Home = () => {
             ].map((item, idx) => (
               <li
                 key={idx}
-                className="hover:text-[#309898] transform transition duration-300 hover:scale-[1.05]"
+                className="hover:text-[#1b8cfc] font-bold transform transition duration-300 hover:scale-[1.05]"
               >
                 {item}
               </li>
@@ -114,7 +118,7 @@ const Home = () => {
           {/* Enroll Button */}
           <button
             onClick={() => navigate("/Admissions")}
-            className="mt-6 w-full py-3 bg-[#ffffff] text-[#00879E] font-semibold rounded-lg hover:bg-[#f5c652] transition duration-300"
+            className="mt-6 w-full py-3 bg-[#ffffff] text-blue-500 font-semibold rounded-lg hover:bg-[#f5c652] transition duration-300"
           >
            Click to  Enroll 
           </button>
@@ -137,6 +141,7 @@ const Home = () => {
         <ContactInfoCard />
       </motion.div> */}
          <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+             <PrincipalMessage />
       <ContactForm />
     </div>
     </div>

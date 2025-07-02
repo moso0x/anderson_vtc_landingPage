@@ -3,7 +3,7 @@ import logo from "../../assets/logo.jpg";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#00879E] text-gray-100 py-12 relative overflow-hidden">
+    <footer className="bg-gradient-to-r from-[#1b8cfc] via-[#2eaefc] to-[#3cc8ff] shadow-lg shadow-blue-300/40] text-gray-100 py-12 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Circular Logo and Rotating Text */}

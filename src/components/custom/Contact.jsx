@@ -8,10 +8,10 @@ const ContactInfoCard = () => {
       <div className="absolute inset-0 z-0 rounded-xl blur-sm animate-spin-fast bg-gradient-to-r from-fuchsia-100 via-yellow-200 to-blue-500"></div>
 
       {/* Card Content */}
-      <div className="relative z-10 bg-gray-100 rounded-xl shadow-lg p-6 text-black grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10">
+      <div className="relative z-10 bg-gray-200 rounded-xl shadow-lg p-6 text-black grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10">
         {/* Contact Info Section */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-[#102E50]">Contact Information</h2>
+          <h2 className="text-2xl font-bold text-gray-600">Contact Information</h2>
 
           <div className="flex items-start gap-3">
             <MapPin className="text-blue-600" />

@@ -15,7 +15,7 @@ const CourseCard = ({ image, title, description, button = "Learn More" }) => {
           alt={title}
           className="w-full h-48 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00879E]/50 via-[#00A3B7]/40 to-[#00C1D4]/50 opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00879E]/40 via-[#00A3B7]/30 to-[#00C1D4]/50 opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
       </div>
       <div className="p-4 flex flex-col">
         <h3 className="text-lg font-semibold text-gray-800 mb-1">{title}</h3>

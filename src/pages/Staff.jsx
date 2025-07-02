@@ -50,8 +50,8 @@ const Staff = () => {
         exit={{ opacity: 0, x: 30 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-lg md:text-2xl font-semibold text-left md:text-center max-w-xl">
-          {staffData[index].message}
+        <h2 className="text-lg md:text-4xl font-semibold text-left md:text-center max-w-xl">
+         <p className="grid-cols-1 "> <span className="text-8xl text-orange-500">‘</span> <p className=""></p>{staffData[index].message}</p>
         </h2>
       </motion.div>
 

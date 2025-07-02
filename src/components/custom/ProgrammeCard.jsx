@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";  // import Link from react-router-dom
 
 const ProgrammeCard = ({ question, answer, requirements }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full max-w-full">
+    <div className="bg-600 p-6 rounded-lg shadow-md border border-gray-200 w-full max-w-full">
       <div className="flex items-center justify-between mb-4 transition-transform hover:scale-105">
         <h2 className="text-[#00879E] font-semibold text-xl">{question}</h2>
       </div>
