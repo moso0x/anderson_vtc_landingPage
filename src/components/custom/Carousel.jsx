@@ -95,7 +95,7 @@ const Carousel = ({ autoSlide = false, autoSlideInterval = 3000, children }) => 
 
       {/* Nav Arrows */}
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#00879E]/80 via-[#00879E]/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#00879E]/40 via-[#00879E]/10 to-transparent" />
       <div className="absolute inset-0 flex items-center justify-between px-4 z-30">
         <button onClick={prev} className="text-white text-3xl">‹</button>
         <button onClick={next} className="text-white text-3xl">›</button>
